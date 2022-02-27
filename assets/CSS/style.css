@@ -13,6 +13,10 @@ body {
 	font-family: sans-serif;
 }
 
+/*	//////////////////////////////
+	||	PANNEAU EN CONSTRUCTION ||
+	//////////////////////////////
+*/	
 .glitch {
 	font-size: 8rem;
 	font-weight: 700;
@@ -96,4 +100,21 @@ body {
 	transition-duration: 0s !important;
 	transition-delay: 0s !important;
 	}
+}
+
+/*	////////////
+	|| HEADER ||
+	////////////
+*/
+
+#intro {
+  background-image: url("https://picsum.photos/1920/1080?grayscale");
+  height: 100vh;
+}
+
+/* Height for devices larger than 576px */
+@media (min-width: 992px) {
+  #intro {
+    margin-top: -58.59px;
+  }
 }
