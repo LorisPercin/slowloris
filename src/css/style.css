@@ -127,12 +127,12 @@ ul li a:hover {
     flex-direction: column;
     text-align: center;
     font-size: 4em;
-    transition: .5s;
+    transition: 1s;
     z-index: 10;
 }
 
 #website-title:hover {
-    transform: scale(1.1);
+    transform: scale(0.9);
 }
 
 #website-title h1 {
