@@ -1,0 +1,156 @@
+@import url('https://fonts.google.com/noto/specimen/Noto+Serif+JP?query=japanese&sort=popularity');
+
+:root {
+    --transparent-color: rgba(255, 255, 255, 0);
+    --main-font-color: #002631;
+
+    --landing-gradient-color-high: rgba(89, 176, 236, 0.8);
+    --landing-gradient-color-mid: rgba(136, 222, 236, 0.8);
+    --landing-gradient-color-low: rgba(255, 223, 255, 0.8);
+    --landing-header-color: #fff0ff;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+
+    color: var(--main-font-color);
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.subtle {
+    color: #3c626d;
+}
+
+#landing {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image:
+            linear-gradient(
+                    var(--landing-gradient-color-high) 20%,
+                    var(--landing-gradient-color-mid)80%,
+                    var(--landing-gradient-color-low)
+            ),
+            url('../img/noise.svg');
+}
+
+#landing-top{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 3rem 4rem 0 4rem;
+}
+
+#landing-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+
+/* Website Name*/
+#website-title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 4em;
+    z-index: 10;
+}
+
+#website-title h1 {
+    letter-spacing: 0.25em;
+    border-bottom: solid;
+}
+/* Website  Name*/
+
+
+/* Moon Figure*/
+.moon {
+    --circle-size: 25rem;
+    --moon-highlight-color: #F2EDF1;
+    --moon-base-color: #EBB3E6;
+
+    display: inline-block;
+    position: absolute;
+    top: 6em;
+    left: 3em;
+    height: var(--circle-size);
+    width: var(--circle-size);
+
+    background-image:
+            radial-gradient(
+                    circle at 85% 95%, /* *shape* at *position* (from left and top)*/
+                    var(--transparent-color)5%,
+                    var(--moon-base-color)65%
+            );
+    filter: blur(1px);
+}
+
+/* Highlight and border of the moon*/
+.moon:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image:
+            radial-gradient(
+                    circle at 25% 10%, /* *shape* at *position* (from left and top)*/
+                    var(--moon-highlight-color)10%,
+                    var(--transparent-color)45%
+            ),
+            radial-gradient(
+                    circle at 50%,
+                    var(--transparent-color) 60%,
+                    var(--landing-gradient-color-low)
+            );
+    z-index: 2;
+}
+/* Moon Figure*/
+
+
+/* Contact Button*/
+.contact-me {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--landing-header-color);
+    font-size: 1.5em;
+    border: var(--landing-header-color) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.1em;
+
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+    box-shadow: inset 0 0 0.5em 0 white, 0 0 0.5em 0 var(--landing-header-color);
+}
+
+.contact-me:hover,
+.contact-me:focus {
+    color: var(--landing-gradient-color-high);
+    background-color: var(--landing-header-color);
+    text-shadow: none;
+    box-shadow: 0 0 1em 0.2em var(--landing-header-color);
+}
+/* Contact Button*/
+
+#construction {
+    font-family: "Liberation Serif", serif;
+    font-size: 3em;
+}
