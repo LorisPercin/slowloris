@@ -127,7 +127,12 @@ ul li a:hover {
     flex-direction: column;
     text-align: center;
     font-size: 4em;
+    transition: .5s;
     z-index: 10;
+}
+
+#website-title:hover {
+    transform: scale(1.1);
 }
 
 #website-title h1 {
@@ -139,9 +144,6 @@ ul li a:hover {
 
 /* Moon Figure*/
 .moon {
-    --circle-size: 25rem;
-    --moon-highlight-color: #F2EDF1;
-    --moon-base-color: #EBB3E6;
 
     display: inline-block;
     position: absolute;
@@ -157,6 +159,12 @@ ul li a:hover {
                     var(--moon-base-color)65%
             );
     filter: blur(1px);
+
+    transition: 2s;
+}
+
+.moon:hover {
+    transform: scale(1.1);
 }
 
 /* Highlight and border of the moon*/
@@ -210,4 +218,9 @@ ul li a:hover {
 #construction {
     font-family: "Liberation Serif", serif;
     font-size: 3em;
+    transition: 1s;
+}
+
+#construction:hover {
+    transform: scale(0.9);
 }
