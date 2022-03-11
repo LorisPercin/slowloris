@@ -88,6 +88,9 @@ Thumbs.db
 *.key
 *.pem
 
+# Prettier package
+package-lock.json
+
 # --------------------------------------------------------
 # BEGIN Explictly Allowed Files (i.e. do NOT ignore these)
 # --------------------------------------------------------
