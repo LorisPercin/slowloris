@@ -9,7 +9,7 @@
     --landing-gradient-color-low: rgba(255, 223, 255, 0.8);
     --landing-header-color: #fff0ff;
 
-    --circle-size: 25rem;
+    --circle-size: 28vw;
     --moon-highlight-color: #F2EDF1;
     --moon-base-color: #EBB3E6;
 }
@@ -144,11 +144,10 @@ ul li a:hover {
 
 /* Moon Figure*/
 .moon {
-
     display: inline-block;
     position: absolute;
-    top: 6em;
-    left: 3em;
+    top: 6vh;
+    left: 3vw;
     height: var(--circle-size);
     width: var(--circle-size);
 
