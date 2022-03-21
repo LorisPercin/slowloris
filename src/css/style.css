@@ -29,6 +29,7 @@ body {
     width: 100%;
     margin: 0;
 
+    font-family: "Times New Roman", serif;
     color: var(--main-font-color);
 }
 
@@ -215,7 +216,6 @@ ul li a:hover {
 /* Contact Button*/
 
 #construction {
-    font-family: "Liberation Serif", serif;
     font-size: 3em;
     transition: 1s;
 }
