@@ -4,29 +4,81 @@
     --main-font-color: #002631;
     --subtle-font-color: #3c626d;
 
-    --font-size-base: clamp(1rem, 0.83rem + 0.85vw, 1.44rem);
-    --font-size-300: clamp(0.83rem, 0.8rem + 0.18vw, 0.93rem);
-    --font-size-500: clamp(1.73rem, 0.31rem + 7.07vw, 5.35rem);
-    --font-size-800: clamp(2.07rem, -0.36rem + 12.14vw, 8.3rem);
+    --font-size-base: clamp(1rem, 0.83rem + 0.85vw, 1.2rem );
+    --font-size-090: clamp(0.83rem, 0.8rem + 0.18vw, 0.93rem);
+    --font-size-200: clamp(1.2rem, 0.8rem + 2.01vw, 2.23rem);
+    --font-size-300: clamp(1.44rem, 0.65rem + 3.93vw, 3.45rem);
+    --font-size-500: clamp(1.73rem, 0.31rem + 7.07vw, 4.35rem);
+    --font-size-800: clamp(2.07rem, -0.36rem + 12.14vw, 7rem);
 
-    --landing-gradient-color-high: rgba(89, 176, 236, 0.8);
-    --landing-gradient-color-mid: rgba(136, 222, 236, 0.8);
-    --landing-gradient-color-low: rgba(255, 223, 255, 0.8);
+    --color-blue: rgba(89, 176, 236, 0.8);
+    --color-blue-light: rgba(136, 222, 236, 0.8);
+    --color-pink-light: rgba(255, 223, 255, 0.8);
     --landing-header-color: #fff0ff;
 
     --circle-size: 28vw;
-    --moon-highlight-color: #F2EDF1;
-    --moon-base-color: #EBB3E6;
-    --transparent-color: rgba(255, 255, 255, 0);
+    --color-pink-lighter: #F2EDF1;
+    --color-pink-dark: #EBB3E6;
+    --color-transparent: rgba(255, 255, 255, 0);
 }
 
-*,
-*::before,
-*::after {
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+}
 
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+    list-style: none;
+    padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
 }
 
 html,
@@ -39,7 +91,7 @@ body {
     font-size: var(--font-size-base);
     color: var(--main-font-color);
 
-    background-color: var(--moon-highlight-color);
+    background-color: var(--color-pink-lighter);
 }
 
 section {
@@ -54,6 +106,7 @@ h4,
 h5,
 h6 {
     font-family: "Times New Roman", serif;
+    font-weight: 400;
 }
 
 h1{
@@ -66,6 +119,10 @@ h2 {
 
 h3 {
     font-size: var(--font-size-300);
+}
+
+h4 {
+    font-size: var(--font-size-200);
 }
 
 img, picture {
@@ -165,7 +222,7 @@ img, picture {
 }
 
 .project-item {
-    background-color: var(--moon-base-color);
+    background-color: var(--color-pink-dark);
     border-radius: 12px;
 }
 
@@ -175,9 +232,9 @@ img, picture {
     height: 100vh;
     background-image:
             linear-gradient(
-                    var(--landing-gradient-color-high) 20%,
-                    var(--landing-gradient-color-mid)80%,
-                    var(--landing-gradient-color-low)
+                    var(--color-blue) 20%,
+                    var(--color-blue-light)80%,
+                    var(--color-pink-light)
             ),
             url('../img/noise.svg');
 }
@@ -222,7 +279,7 @@ img, picture {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: var(--moon-highlight-color);
+    background: var(--color-pink-lighter);
     transition: .5s;
     transform: scale(.9);
     z-index: -1;
@@ -230,13 +287,13 @@ img, picture {
 
 .nav-link:hover::before {
     transform: scale(1.1);
-    box-shadow: 0 0 15px var(--moon-highlight-color);
+    box-shadow: 0 0 15px var(--color-pink-lighter);
 }
 
 .nav-link:hover {
-    color: var(--moon-highlight-color);
-    box-shadow: 0 0 5px var(--moon-highlight-color);
-    text-shadow: 0 0 5px var(--moon-highlight-color);
+    color: var(--color-pink-lighter);
+    box-shadow: 0 0 5px var(--color-pink-lighter);
+    text-shadow: 0 0 5px var(--color-pink-lighter);
 }
 /* Navbar End*/
 
@@ -283,8 +340,8 @@ img, picture {
     background-image:
             radial-gradient(
                     circle at 85% 95%, /* *shape* at *position* (from left and top)*/
-                    var(--transparent-color)5%,
-                    var(--moon-base-color)65%
+                    var(--color-transparent)5%,
+                    var(--color-pink-dark)65%
             );
     filter: blur(1px);
 
@@ -305,13 +362,13 @@ img, picture {
     background-image:
             radial-gradient(
                     circle at 25% 10%, /* *shape* at *position* (from left and top)*/
-                    var(--moon-highlight-color)10%,
-                    var(--transparent-color)45%
+                    var(--color-pink-lighter)10%,
+                    var(--color-transparent)45%
             ),
             radial-gradient(
                     circle at 50%,
-                    var(--transparent-color) 60%,
-                    var(--landing-gradient-color-low)
+                    var(--color-transparent) 60%,
+                    var(--color-pink-light)
             );
     z-index: 2;
 }
@@ -336,7 +393,7 @@ img, picture {
 
 .contact-me:hover,
 .contact-me:focus {
-    color: var(--landing-gradient-color-high);
+    color: var(--color-blue);
     background-color: var(--landing-header-color);
     text-shadow: none;
     box-shadow: 0 0 1em 0.2em var(--landing-header-color);
