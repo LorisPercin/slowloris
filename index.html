@@ -7,12 +7,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="description" content="" />
         <link rel="stylesheet" type="text/css" href="src/css/style.css" />
-        <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-            integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-            crossorigin="anonymous"
-        />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"/>
         <!--        <link rel="icon" href="img/favicon.png" />-->
         <meta name="theme-color" content="" />
     </head>
@@ -93,28 +88,55 @@
                 </div>
             </div>
 
-            <div class="landing-page-content">
-                <div id="techos" class="flow">
-                    <section class="flow">
+            <div id="techos" class="flow">
+                    <div>
                         <h2>Caisse à outils</h2>
+                    </div>
+                <div>
+
+                    <section class="flow">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus architecto corporis distinctio, molestiae nesciunt vero.</p>
                     </section>
-                    <ul role="list">
-                        <li><a href="">item 1</a></li>
-                        <li><a href="">item 2</a></li>
-                        <li><a href="">item 3</a></li>
-                        <li><a href="">item 4</a></li>
-                        <li><a href="">item 5</a></li>
-                        <li><a href="">item 6</a></li>
-                    </ul>
+
+                    <div class="center">
+                        <ul class="text-200 flow-space-300" role="list">
+                            <li>Python</li>
+                            <li>HTML/CSS</li>
+                            <li>JavaScript</li>
+                            <li>JQuery</li>
+                            <li>PHP</li>
+                            <li>Symfony</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
-            <footer>
-                <div class="wrapper">
-
-                </div>
-            </footer>
         </div>
+
+        <footer id="site-footer">
+            <div class="wrapper">
+                <h2>Contactez Moi!</h2>
+                <div class="form-container">
+<!--                    <form action="https://send.pageclip.co/D6yQGrF0n7zTN7TNZCqKhFoSw16DvvpI/slowloris-contact" class="pageclip-form" method="post">-->
+                    <form action="#site-footer" class="pageclip-form" method="post">
+
+                        <fieldset>
+                            <input type="text" name="name" placeholder="Billy Jean"/>
+                        </fieldset>
+                        <fieldset>
+                            <input type="email" name="email" placeholder="billy@example.com"/>
+                        </fieldset>
+                        <fieldset>
+                            <textarea name="body"  cols="30" rows="10" placeholder="Entrez votre message ici"></textarea>
+                        </fieldset>
+
+                        <fieldset>
+                            <input type="submit" value="Send">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
     </body>
 </html>
