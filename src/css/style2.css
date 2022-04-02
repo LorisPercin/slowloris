@@ -97,14 +97,14 @@ select {
     --clr-primary-400: rgba(255, 223, 255);
     --clr-primary-800: rgb(235, 179, 230);
 
+    --clr-secondary-200: rgba(136, 222, 236);
+    --clr-secondary-400: rgba(89, 176, 236);
+
     --bg-clr-primary-200: rgba(242, 237, 241, 0.8);
     --bg-clr-primary-400: rgba(255, 223, 255, 0.8);
     --bg-clr-primary-800: rgba(235, 179, 230, 0.8);
     --bg-clr-secondary-200: rgba(136, 222, 236, 0.8);
     --bg-clr-secondary-400: rgba(89, 176, 236, 0.8);
-
-    --clr-secondary-200: rgba(136, 222, 236);
-    --clr-secondary-400: rgba(89, 176, 236);
 
     --fs-300: clamp(0.83rem, 0.8rem + 0.18vw, 0.93rem);
     --fs-400: clamp(1rem, 0.83rem + 0.85vw, 1.44rem );
@@ -125,7 +125,11 @@ body {
     line-height: 1.5;
     color: var(--clr-neutral-400);
     background:
-            linear-gradient(var(--bg-clr-primary-400)110vh, var(--bg-clr-primary-200)),
+            linear-gradient(
+                    var(--bg-clr-secondary-400),
+                    var(--bg-clr-secondary-200),
+                    var(--bg-clr-primary-400)100vh,
+                    var(--bg-clr-primary-200)),
             url('../img/noise.svg');
 }
 
@@ -190,10 +194,38 @@ h2 {
     flex-basis: 40rem;
 }
 .content-pair p {
-    max-width: 40ch;
+    max-width: 30ch;
+}
+/* Utility */
+.center {
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 
-
-/* Utility */
-
 /* Block */
+.hero {
+    height: 100vh;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.socials-item {
+    list-style: none;
+    margin: 0 .25em;
+}
+.socials-link {
+    position: relative;
+    display: block;
+    width: var(--fs-700);
+    height: var(--fs-700);
+    text-align: center;
+    line-height: 1.9em;
+    border-radius: 50%;
+    border: solid;
+    font-size: 1.44rem;
+    color: var(--main-font-color);
+    transition: .5s;
+}
