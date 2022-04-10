@@ -96,6 +96,37 @@ select {
     --bg-clr-secondary-200: rgba(136, 222, 236, 0.8);
     --bg-clr-secondary-400: rgba(89, 176, 236, 0.8);
 
+    /* 98.css */
+    --surface: #c0c0c0;
+    --window-frame: #0a0a0a;
+    --button-highlight: #ffffff;
+    --button-face: #dfdfdf;
+    --button-shadow: #808080;
+    --dialog-blue: #000080;
+    --dialog-blue-light: #1084d0;
+    --dialog-gray: #808080;
+    --dialog-gray-light: #b5b5b5;
+
+    --border-width: 1px;
+    --border-raised-outer: inset -1px -1px var(--window-frame),
+    inset 1px 1px var(--button-highlight);
+    --border-raised-inner: inset -2px -2px var(--button-shadow),
+    inset 2px 2px var(--button-face);
+    --border-sunken-outer: inset -1px -1px var(--button-highlight),
+    inset 1px 1px var(--window-frame);
+    --border-sunken-inner: inset -2px -2px var(--button-face),
+    inset 2px 2px var(--button-shadow);
+    --border-window-outer: inset -1px -1px var(--window-frame),
+    inset 1px 1px var(--button-face);
+    --border-window-inner: inset -2px -2px var(--button-shadow),
+    inset 2px 2px var(--button-highlight);
+    --border-field: inset -1px -1px var(--button-highlight),
+    inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
+    inset 2px 2px var(--window-frame);
+
+    --element-spacing: 0.5rem;
+    --grouped-element-spacing: 0.35rem;
+
     --fs-300: clamp(0.83rem, 0.8rem + 0.18vw, 0.93rem);
     --fs-400: clamp(1rem, 0.83rem + 0.85vw, 1.44rem );
     --fs-500: clamp(1.2rem, 0.8rem + 2.01vw, 2.23rem);
@@ -106,6 +137,11 @@ select {
     --fw-400: 500;
     --fw-500: 700;
     --fw-900: 900;
+}
+@font-face {
+    font-family: "Pixelated MS Sans Serif";
+    src: url("fonts/ms_sans_serif.woff") format("woff"),
+        url("fonts/ms_sans_serif.woff2") format("woff2");
 }
 
 body {
@@ -141,12 +177,25 @@ h2 {
 
 h3 {
     font-size: var(--fs-500);
-    font-weight: var(--fw-700);
+    font-weight: var(--fw-500);
 }
 
 a {
     color: var(--clr-neutral-400);
     text-decoration: none;
+}
+
+.form-98 button,
+.form-98 label,
+.form-98 input,
+.form-98 textarea,
+.form-98 select,
+.form-98 option,
+.form-98 ul.tree-view,
+.window-98,
+.title-bar-98{
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+    -webkit-font-smoothing: none;
 }
 
 /* Composition */
@@ -233,6 +282,99 @@ a {
     color: var(--btn-text-clr-hover, var(--clr-neutral-400));
     background-color: var(--btn-bg-clr-hover, var(--clr-primary-200));
     box-shadow: 0 0 2px 1px var(--clr-neutral-100);
+}
+
+/* From 98.css: https://github.com/jdan/98.css/ */
+.button-98 {
+    box-sizing: border-box;
+    border: none;
+    background: var(--surface);
+    box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+    border-radius: 0;
+
+    min-width: 75px;
+    min-height: 23px;
+    padding: 0 12px;
+}
+.button-98:not(:disabled):active {
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+    padding: 2px 11px 0 13px;
+}
+.button-98:not(:disabled):hover {
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+}
+.button-98:focus {
+    outline: 1px dotted #000000;
+    outline-offset: -4px;
+}
+
+.window-98 {
+    box-shadow: var(--border-window-outer), var(--border-window-inner);
+    background: var(--surface);
+    padding: 3px;
+}
+.window-body-98 {
+    margin: var(--element-spacing);
+}
+
+.title-bar-98 {
+    background: linear-gradient(
+            90deg,
+            var(--dialog-blue),
+            var(--dialog-blue-light)
+    );
+    padding: 3px 2px 3px 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-bar-text-98 {
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0;
+    margin-right: 24px;
+}
+
+.field-row-stacked-98 {
+    display: flex;
+    flex-direction: column;
+}
+.field-row-stacked-98 * + * {
+    margin-top: var(--grouped-element-spacing);
+}
+
+.form-98 input[type="text"],
+.form-98 input[type="password"],
+.form-98 input[type="email"],
+.form-98 select,
+.form-98 textarea {
+    padding: 3px 4px;
+    border: none;
+    box-shadow: var(--border-field);
+    background-color: var(--button-highlight);
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
+.form-98 input[type="text"],
+.form-98 input[type="password"],
+.form-98 input[type="email"],
+.form-98 select {
+    height: var(--fs-500);
+}
+.form-98 input[type="text"],
+.form-98 input[type="password"],
+.form-98 input[type="email"] {
+    /* For some reason descenders are getting cut off without this */
+    line-height: 2;
+}
+.form-98 input[type="email"]:disabled,
+.form-98 input[type="password"]:disabled,
+.form-98 input[type="text"]:disabled,
+.form-98 textarea:disabled {
+    background-color: var(--surface);
 }
 
 .subtitle {
@@ -324,7 +466,7 @@ a {
             url('../img/noise.svg');
 }
 .project-image {
-    height: 10em;
+    height: 7em;
 }
 .project-image:after {
     content: "";
@@ -349,4 +491,31 @@ a {
 .project p {
     margin-top: var(--fs-600);
 }
+
+#site-footer {
+    padding: 2rem 0;
+    background:
+            linear-gradient(
+                    200deg,
+                    var(--bg-clr-secondary-200)40%,
+                    var(--bg-clr-secondary-400)),
+            url('../img/noise.svg');
+}
+
+.form-container {
+    margin: 2rem auto auto;
+}
+@media (min-width: 40em) {
+    .form-container {
+        max-width: 70%;
+    }
+}
+.contact-form {
+    display: grid;
+}
+.contact-form > * {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
 
