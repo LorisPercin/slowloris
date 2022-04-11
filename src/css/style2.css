@@ -132,7 +132,8 @@ select {
     --fs-500: clamp(1.2rem, 0.8rem + 2.01vw, 2.23rem);
     --fs-600: clamp(1.44rem, 0.65rem + 3.93vw, 3.45rem);
     --fs-700: clamp(1.73rem, 0.31rem + 7.07vw, 5.35rem);
-    --fs-800: clamp(2.07rem, -0.36rem + 12.14vw, 8.3rem);
+    --fs-800: clamp(2.07rem, -0.36rem + 12.14vw, 7rem);
+    --fs-900: clamp(2.07rem, -0.36rem + 12.14vw, 8.3rem);
 
     --fw-400: 500;
     --fw-500: 700;
@@ -166,7 +167,7 @@ h2 {
 }
 
 h1 {
-    font-size: var(--fs-800);
+    font-size: var(--fs-900);
     font-weight: var(--fw-900);
 }
 
@@ -226,7 +227,6 @@ a {
 .content-pair {
     justify-content: space-between;
     gap: var(--fs-500);
-    margin-top: var(--fs-400);
 }
 .content-pair > figure {
     flex-basis: 40rem;
@@ -264,6 +264,43 @@ a {
     max-width: 82rem;
 }
 
+.flow-gap-400 {
+    --flow-space: var(--fs-400)
+}
+.flow-gap-500 {
+    --flow-space: var(--fs-500)
+}
+.flow-gap-600 {
+    --flow-space: var(--fs-600)
+}
+.flow-gap-900 {
+    --flow-space: var(--fs-900)
+}
+
+.text-400 {
+    font-size: var(--fs-400);
+}
+.text-500 {
+    font-size: var(--fs-500);
+}
+.text-600 {
+    font-size: var(--fs-600);
+}
+.text-700 {
+    font-size: var(--fs-700);
+}
+.text-800 {
+    font-size: var(--fs-800);
+}
+.text-900 {
+    font-size: var(--fs-900);
+}
+
+.weight-900 {
+    font-weight: var(--fw-900);
+}
+
+
 .center {
     display: grid;
     justify-content: center;
@@ -282,6 +319,11 @@ a {
     color: var(--btn-text-clr-hover, var(--clr-neutral-400));
     background-color: var(--btn-bg-clr-hover, var(--clr-primary-200));
     box-shadow: 0 0 2px 1px var(--clr-neutral-100);
+}
+
+.subtitle {
+    color: var(--clr-neutral-100);
+    line-height: 0;
 }
 
 /* From 98.css: https://github.com/jdan/98.css/ */
@@ -377,23 +419,38 @@ a {
     background-color: var(--surface);
 }
 
-.subtitle {
-    color: var(--clr-neutral-100);
-    line-height: 0;
-}
-
 /* Block */
 .hero {
-    height: 100vh;
+    height: 90vh;
     display: grid;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1;
+    z-index: 10;
+}
+.hero-title h1 {
+    font-size: var(--fs-800);
+}
+.hero-title h1:first-child {
+    letter-spacing: 0.25em;
+    border-bottom: solid;
+}
+.hero-title div {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    line-height: 3em;
+}
 @media (min-width: 40em) {
-    .hero {
-        justify-content: start;
-        text-align: start;
+    .hero-title div {
+        justify-content: space-between;
+        flex-direction: row;
     }
 }
 
@@ -517,5 +574,3 @@ a {
     margin-top: .5rem;
     margin-bottom: .5rem;
 }
-
-
